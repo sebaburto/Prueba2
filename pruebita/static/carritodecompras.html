@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" type="text/css"  href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body background="IMAGENES/fondo.jpg">
+  
+<!--navbar-->
+<div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top test id="menu">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="IMAGENES/logoMK.jpg"style width="60px" height="60px" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="static/index.html">Inicio</a>
+            <a class="nav-link" href="static/login.html"target="_blank">Login</a>
+            <a class="nav-link" href="static/productos.html">Tienda</a>
+            <a class="nav-link" href="static/donaciones.html">Donaciones</a>
+            <a class="nav-link" href="static/carritodecompras.html">Carrito</a>
+            <a class="nav-link" href="static/formulario.html">Registrate</a>
+            <a class="nav-link" href="static/contacto.html">Contáctanos</a>
+            <a class="nav-link" href="static/seguimiento.html">Sigue tu pedido</a>
+            <a class="nav-link" >Cliente</a>
+            <a class="nav-link" ><img src="IMAGENES/usuario.png" style="height: 30px;width: 30px" /></a>
+        </div>
+        </div>
+      </div>
+  </nav>
+</div>
+
+<h1 class="letra1 display-2 text-center navbar-dark bg-dark">Tu carrito</h1>
+
+<div class="container">
+<div id="productos" class="row">
+
+const seguimiento =[
+{
+    url:
+      "https://sodimac.scene7.com/is/image/SodimacCL/164488?fmt=jpg&fit=fit,1&wid=300&hei=300",
+    nombre: "Ficus Benjamina",
+    precio: "$ 6.000",
+    estado: "Enviado",
+    clase: "estadoVerde"
+},
+{
+    url:
+      "https://sodimac.scene7.com/is/image/SodimacCL/398057X?fmt=jpg&fit=fit,1&wid=300&hei=300",
+    nombre: "Lavanda",
+    precio: "$ 2.500",
+    estado:"En camino",
+    clase:"estadoAzul"
+
+},
+{
+    url:
+      "https://sodimac.scene7.com/is/image/SodimacCL/753203?fmt=jpg&fit=fit,1&wid=300&hei=300",
+    nombre: "Hypoestes sanguinolenta",
+    precio:"$ 3.000",   
+    estado:"En proceso",
+    clase: "estadoPurpura"
+},
+  
+/seguimiento/
+var texto_iterable3= ""
+
+seguimiento.forEach((element) => {
+
+var seguimiento_html = `<div class="col">
+<div class="bg-success" style="width: 25rem;">
+    <img src="${element.url}" class="card-img-top " alt="foto">
+    <div class="card-body ">
+      <h5 class="card-title">Estado del producto</h5>
+      <p class="card-text">${element.nombre}</p>
+      <p class ="card-text">${element.precio}</p>
+      <p class ="card-text">${element.estado}</p>
+      <p class="card-text">${element.clase}</p>
+        </div>
+  </div>
+</div>`
+    
+texto_iterable3 += seguimiento_html
+$("#seguimiento").html( texto_iterable3 )
+});
+
+<br>
+<!--TARJETAS-->
+
+<div class="row">
+  <div class="col-sm-3">
+    <div class="card bg-success" id="card-body">
+      <div class="card-body">
+        <h5 class="card-title">Registrate</h5>
+        <p class="card-text">Asi podras obtener beneficios.</p>
+        <a href="formulario.html"></a><img src="IMAGENES/registrate.jpg"
+        id="card-img" style="height: 200px;width: 300px"></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card bg-success" id="card-body">
+      <div class="card-body">
+        <h5 class="card-title">Nuestros productos</h5>
+        <p class="card-text">Remodela tu hogar.</p>
+        <a href="carritodecompras.html"><img src="IMAGENES/carrito.jpg"
+        id="card-img" style="height: 200px;width: 300px"></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card bg-success" id="card-body">
+      <div class="card-body">
+        <h5 class="card-title">Seguimiento</h5>
+        <p class="card-text">Conoce el paradero de tu pedido.</p>
+        <a href="seguimiento.html"><img src="IMAGENES/seguimiento.jpg"
+        id="card-img" style="height: 200px;width: 300px"></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card bg-success" id="card-body">
+      <div class="card-body">
+        <h5 class="card-title">Ayudanos a crecer</h5>
+        <p class="card-text">Con tu ayuda podemos mejorar.</p>
+        <a href="donaciones.html"><img src="IMAGENES/donaciones.jpg"
+        id="card-img" style="height: 200px;width: 300px"></a>
+      </div>
+    </div>  
+  </div>
+</div>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script> 
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src= "JS\productos.js"></script>
